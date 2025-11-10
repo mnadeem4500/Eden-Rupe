@@ -1,0 +1,86 @@
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+      <div class="container-fluid">
+  
+        <!-- Left: Brand / Logo -->
+        <a class="navbar-brand" routerLink="/">Eden Rupe</a>
+  
+        <!-- Mobile Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Center & Right Sections -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          
+          <!-- Center: Search Bar -->
+          <form
+            class="search mx-auto my-2 my-lg-0"
+            [formGroup]="searchForm"
+            (ngSubmit)="onSearch()"
+          >
+            <input
+              formControlName="search"
+              type="search"
+              placeholder="Search products..."
+              aria-label="Search"
+            />
+            <button type="submit" aria-label="Search">🔍</button>
+          </form>
+  
+          <!-- Right: Menu Items -->
+          <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item"><a class="nav-link" routerLink="/wishlist">Mens</a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="mensDropdown">
+                    <li><a class="dropdown-item" routerLink="/mens/shirts">Shirts</a></li>
+                    <li><a class="dropdown-item" routerLink="/mens/pants">Pants</a></li>
+                    <li><a class="dropdown-item" routerLink="/mens/shoes">Shoes</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/mens/accessories">Accessories</a></li>
+                  </ul></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/login">Women</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/kids">Kids</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/unstitched">Unstitched</a></li>
+          </ul> -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+            <!-- Dropdown item -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mensDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Mens
+              </a>
+          
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="mensDropdown">
+                <li><a class="dropdown-item" routerLink="/mens/shirts">Shirts</a></li>
+                <li><a class="dropdown-item" routerLink="/mens/pants">Pants</a></li>
+                <li><a class="dropdown-item" routerLink="/mens/shoes">Shoes</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" routerLink="/mens/accessories">Accessories</a></li>
+              </ul>
+            </li>
+          
+            <!-- Regular menu items -->
+            <li class="nav-item"><a class="nav-link" routerLink="/women">Women</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/kids">Kids</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/unstitched">Unstitched</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+  

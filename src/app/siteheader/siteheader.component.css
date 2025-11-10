@@ -1,0 +1,100 @@
+/* Overall font */
+.site-header {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+/* Center Search Bar */
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 4px 10px;
+  width: 320px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+}
+
+.search button:hover {
+  color: #000;
+}
+.nav-link {
+  color: #fff !important;
+  transition: color 0.3s;
+}
+
+/* Nav Links */
+.nav-link:hover,
+.dropdown-item:hover {
+  color: #ffcc00 !important;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background-color: #333;
+  border: none;
+  border-radius: 10px;
+}
+.navbar .dropdown:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Keep the hover color active */
+.navbar .dropdown:hover > .nav-link {
+  color: #ffcc00 !important;
+}
+.navbar .dropdown-toggle::after {
+  display: none !important; /* remove Bootstrap arrow */
+}
+
+.navbar .fa-chevron-down {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+/* Rotate arrow when open */
+.navbar .dropdown.show .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 992px) {
+  .search {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .navbar .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Keep highlight on hover */
+  .navbar .nav-item.dropdown:hover > .nav-link {
+    color: #ffcc00 !important;
+  }
+}
