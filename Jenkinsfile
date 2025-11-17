@@ -1,33 +1,67 @@
-pipeline{
-    agent any 
+// pipeline{
+//     agent any 
 
-    environment{
+//     environment{
+//         VERCEL_TOKEN = credentials('vercel_token')
+//     }
+//     stages{
+//         stage('install'){
+//             step{
+//                 bat ='npm install'
+//             }
+            
+//         }
+//         stage('Test'){
+//             step{
+//                 echo 'skipping test'
+//             }
+            
+//         }
+//         stage('Build'){
+//             step{
+//                 bat ='npm run build'
+//             }
+            
+//         }
+//         stage('Deploye'){
+//             step{
+//                 bat ='npx vercel  --prod --yes --token=%VERCEL_TOKEN%'
+//             }
+            
+//         }
+//     }
+// }
+
+pipeline {
+    agent any
+
+    environment {
         VERCEL_TOKEN = credentials('vercel_token')
     }
-    stages{
-        stage('install'){
-            step{
-                bat ='npm install'
+
+    stages {
+        stage('Install') {
+            steps {
+                bat 'npm install'
             }
-            
         }
-        stage('Test'){
-            step{
-                echo 'skipping test'
+
+        stage('Test') {
+            steps {
+                echo 'Skipping test'
             }
-            
         }
-        stage('Build'){
-            step{
-                bat ='npm run build'
+
+        stage('Build') {
+            steps {
+                bat 'npm run build'
             }
-            
         }
-        stage('Deploye'){
-            step{
-                bat ='npx vercel  --prod --yes --token=%VERCEL_TOKEN%'
+
+        stage('Deploy') {
+            steps {
+                bat 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
             }
-            
         }
     }
 }
