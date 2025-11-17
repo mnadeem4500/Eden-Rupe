@@ -57,11 +57,16 @@ pipeline {
                 bat 'npm run build'
             }
         }
-
         stage('Deploy') {
-            steps {
-                bat 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
-            }
-        }
+    steps {
+        echo 'Skipping deploy for testing'
+    }
+}
+
+        // stage('Deploy') {
+        //     steps {
+        //         bat 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
+        //     }
+        // }
     }
 }
