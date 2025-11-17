@@ -57,16 +57,22 @@ pipeline {
                 bat 'npm run build'
             }
         }
-        stage('Deploy') {
-    steps {
-        echo 'Skipping deploy for testing'
-    }
-}
+//         stage('Deploy') {
+//     steps {
+//         echo 'Skipping deploy for testing'
+//     }
+// }
 
         // stage('Deploy') {
         //     steps {
         //         bat 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
         //     }
         // }
+        stage('Deploy') {
+    steps {
+        bat 'npx vercel --prod --yes --name project-eden-rupe --token=%VERCEL_TOKEN%'
     }
+}
+    }
+
 }
